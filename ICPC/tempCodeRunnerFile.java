@@ -1,20 +1,23 @@
-import java.util.Scanner;
+import java.util.*;
+public class ICPCcode2J {
+public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
 
-public class ICPCcode2E {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-         if (scanner.hasNextInt()) {
-            int n = scanner.nextInt();
-            int max = 0; // Since Xi >= 0, we can initialize max to 0
-            
-            for (int i = 0; i < n; i++) {
-                int x = scanner.nextInt();
-                if (x > max) {
-                    max = x;
+        int n = sc.nextInt();
+
+        for (int i = 2; i <= n; i++) {
+            boolean prime = true;
+
+            for (int j = 2; j * j <= i; j++) {
+                if (i % j == 0) {
+                    prime = false;
+                    break;
                 }
             }
-            
-            System.out.println(max);
+
+            if (prime) {
+                System.out.print(i + " ");
+            }
         }
-    }
+}
 }

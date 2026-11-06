@@ -1,24 +1,22 @@
 import java.util.Scanner;
-public class ICPCcode2Z {
+public class ICPCcode3B {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] a = new int[n];
 
-        int k = sc.nextInt();
-        int s = sc.nextInt();
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+        int x = sc.nextInt();
+        int position = -1;
 
-        int count = 0;
-
-        for (int x = 0; x <= k; x++) {
-            for (int y = 0; y <= k; y++) {
-
-                int z = s - x - y;
-
-                if (z >= 0 && z <= k) {
-                    count++;
-                }
+        for (int i = 0; i < n; i++) {
+            if (a[i] == x) {
+                position = i;
+                break;
             }
         }
-
-        System.out.println(count);
+        System.out.println(position);
     }
 }

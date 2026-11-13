@@ -1,28 +1,27 @@
-import java.util.Scanner;
-public class ICPCcode3H {
+import java.util.*;
+public class ICPCcode3O {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         int n = sc.nextInt();
 
-        int[] a = new int[n];
+        long a = 0;
+        long b = 1;
 
-        for (int i = 0; i < n; i++) {
-            a[i] = sc.nextInt();
-        }
-
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - 1 - i; j++) {
-
-                if (a[j] > a[j + 1]) {
-                    int temp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = temp;
-                }
+        if (n == 1) {
+            System.out.println(0);
+        } 
+        else if (n == 2) {
+            System.out.println(1);
+        } 
+        else {
+            for (int i = 3; i <= n; i++) {
+                long c = a + b;
+                a = b;
+                b = c;
             }
-        }
 
-        for (int i = 0; i < n; i++) {
-            System.out.print(a[i] + " ");
+            System.out.println(b);
         }
     }
 }

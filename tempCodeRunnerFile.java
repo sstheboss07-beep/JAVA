@@ -1,27 +1,36 @@
 import java.util.*;
-public class ICPCcode3O {
+public class ICPCcode3S {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
+        int m = sc.nextInt();
 
-        long a = 0;
-        long b = 1;
+        int a[][] = new int[n][m];
 
-        if (n == 1) {
-            System.out.println(0);
-        } 
-        else if (n == 2) {
-            System.out.println(1);
-        } 
-        else {
-            for (int i = 3; i <= n; i++) {
-                long c = a + b;
-                a = b;
-                b = c;
+        boolean found = false;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                a[i][j] = sc.nextInt();
             }
+        }
 
-            System.out.println(b);
+        int x = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (a[i][j] == x) {
+                    found = true;
+                }
+            }
+        }
+
+        if (found) {
+            System.out.println("will not take number");
+        } else {
+            System.out.println("will take number");
         }
     }
 }
+
